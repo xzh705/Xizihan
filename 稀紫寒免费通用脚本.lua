@@ -1,4 +1,4 @@
--- ===== 参数水印（loadstring 传入的括号内容会显示在屏幕左下角）=====
+-- ===== 参数水印（loadstring 传入的括号内容，显示在屏幕顶部中间）=====
 local __ARG = ...
 local __ARGSTR = (__ARG ~= nil) and tostring(__ARG) or ""
 if #__ARGSTR > 0 then
@@ -18,16 +18,16 @@ if #__ARGSTR > 0 then
     gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     local lbl = Instance.new("TextLabel")
     lbl.Name = "tag"
-    lbl.AnchorPoint = Vector2.new(0, 1)
-    lbl.Position = UDim2.new(0, 12, 1, -12)
-    lbl.Size = UDim2.new(0, 0, 0, 26)
+    lbl.AnchorPoint = Vector2.new(0.5, 0)
+    lbl.Position = UDim2.new(0.5, 0, 0, 10)
+    lbl.Size = UDim2.new(0, 0, 0, 24)
     lbl.AutomaticSize = Enum.AutomaticSize.X
     lbl.BackgroundColor3 = Color3.fromRGB(18, 18, 22)
-    lbl.BackgroundTransparency = 0.25
+    lbl.BackgroundTransparency = 0.35
     lbl.BorderSizePixel = 0
     lbl.TextColor3 = Color3.fromRGB(0, 255, 160)
     lbl.Font = Enum.Font.GothamBold
-    lbl.TextSize = 16
+    lbl.TextSize = 15
     lbl.Text = __ARGSTR
     lbl.Parent = gui
     local pad = Instance.new("UIPadding")
@@ -39,7 +39,7 @@ if #__ARGSTR > 0 then
     corner.Parent = lbl
     local stroke = Instance.new("UIStroke")
     stroke.Color = Color3.fromRGB(0, 255, 160)
-    stroke.Transparency = 0.5
+    stroke.Transparency = 0.6
     stroke.Parent = lbl
     gui.Parent = pg
   end)
